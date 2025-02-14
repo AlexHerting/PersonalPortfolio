@@ -26,6 +26,20 @@
             background: var(--secondary);
         }
 
+        .designdoc-btn {
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .designdoc-btn:hover {
+            background: var(--secondary);
+        }
+
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -122,7 +136,7 @@
               </div>
               <div class="project-links">
                   <a href="https://blt.cawbrey.com/" class="project-link" target="_blank">Prototype 1</a>
-                    <button class="demo-btn" onclick="downloadDesignDoc()">Design Document</button>
+                    <button class="designdoc-btn" onclick="downloadDesignDoc()">Design Document</button>
               </div>
             </div>
 
@@ -214,6 +228,20 @@
 
     <script src="script.js"></script>
     <script>
+
+        const modalOverlay = document.getElementById("modalOverlay");
+        const iframe = document.getElementById("ytVideo");
+        const closeModal = document.querySelector(".close-btn");
+
+        document.querySelectorAll(".demo-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const videoId = this.getAttribute("data-video-id");
+                if (videoId) {
+                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    modalOverlay.style.display = "flex";
+                }
+            });
+        });
 
       document.querySelector('.close-btn').addEventListener('click', () => {
           document.getElementById('modalOverlay').style.display = 'none';
