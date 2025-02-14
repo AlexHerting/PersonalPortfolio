@@ -3,11 +3,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Alex Herting</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Existing head content remains the same -->
+    <style>
+        /* Add these styles to your existing CSS */
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .demo-btn {
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .demo-btn:hover {
+            background: var(--secondary);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Resume - Alex Herting</title>
+      <link rel="stylesheet" href="styles.css">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
 </head>
 <body>
     <!-- Navigation -->
@@ -24,37 +98,107 @@
         </div>
     </nav>
 
-<section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>E-Commerce Platform</h3>
-          <p>
-            Developed a full-stack shopping platform using React on the front end and Spring Boot on the back end. Integrated secure payment gateways and real-time inventory management.
-          </p>
-          <div class="tech-stack">
-            <span>React</span>
-            <span>Java</span>
-            <span>MySQL</span>
+    <section id="projects">
+      <div class="container">
+          <h2>Projects</h2>
+          <div class="project-grid">
+              
+            <div class="project-card">
+              <h3>Reiman Gardens Butterfly Longevity Tracker</h3>
+              <p>
+                  Currently working in a group of 5 developing a web application for the Reiman Gardens that will allow guests to enter butterfly tags and view information about the butterflies they find during their visit. We are currently implementing multi-institutional functionality, which will allows us to scale our web app to be used by butterfly gardens around the world. 
+              </p>
+              <div class="tech-stack">
+                  <span>HTML/CSS/JS</span>
+                  <span>Git</span>
+                  <span>GitLab</span>
+                  <span>Java</span>
+                  <span>Spring</span>
+                  <span>Git</span>
+                  <span>Git</span>
+                  <span>Git</span>
+                  <span>Git</span>
+              </div>
+              <div class="project-links">
+                  <a href="https://blt.cawbrey.com/" class="project-link" target="_blank">Prototype 1</a>
+                    <button class="demo-btn" onclick="downloadDesignDoc()">Design Document</button>
+              </div>
+            </div>
+
+            <div class="project-card">
+                  <h3>Android Application - ISU Marketplace with Live Chatting</h3>
+                  <p>
+                    Led a team of four in developing an Android application, managing sprint planning and execution in three-week cycles to meet deadlines efficiently. Utilized GitLab for version control, implemented WebSocket-based live chat, and designed a user-friendly front-end to enhance the ISU Marketplace application experience.
+                  </p>
+                  <div class="tech-stack">
+                      <span>Java</span>
+                      <span>Git</span>
+                      <span>GitLab</span>
+                      <span>WebSockets</span>
+                      <span>Android Studio</span>
+                  </div>
+              </div>
+
+              <div class="project-card">
+                  <h3>Pokemon Rogue Type Game</h3>
+                  <p>
+                    Developed a dynamic Pokémon game in C and C++ that generates a unique experience on each startup by implementing the official Pokémon database to spawn and configure monsters based on level, IVs, and other attributes. The project was built for a Linux environment using GCC and GDB, adhering to a structured 14-week development timeline with weekly functional milestones.
+                  </p>
+                  <div class="tech-stack">
+                      <span>C</span>
+                      <span>C++</span>
+                      <span>GCC</span>
+                      <span>GDB</span>
+                  </div>
+                  <div class="project-links">
+                      <button class="demo-btn" data-video-id="Q6DpGkhX7u0">View Demo</button>
+                  </div>
+              </div>
+
+              <div class="project-card">
+                <h3>Online Store - Mouz</h3>
+                <p>
+                  Developed a React front end and Node.js backend for a marketplace application, enabling users to create, buy, modify, and delete items. Collaborated with a teammate using a sprint backlog for task management and implemented RESTful API operations with MongoDB for backend functionality.
+                </p>
+                <div class="tech-stack">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>MongoDB</span>
+                    <span>GitHub</span>
+                    <span>Git</span>
+                </div>
+                <div class="project-links">
+                    <button class="demo-btn" data-video-id="Gq-zOW7Zv0s">View Demo</button>
+                </div>
+            </div>
+
+              <div class="project-card">
+                <h3>Video Game Script - Knockout City Autocatcher</h3>
+                <p>
+                  Developed a C++ script for Knockout City that automatically catches incoming dodgeballs with ultra-fast reaction times. The script enhances gameplay by detecting and responding to incoming balls with inhuman speed.  
+                </p>
+                <div class="tech-stack">
+                    <span>C++</span>
+                </div>
+            </div>
+
           </div>
-          <a href="https://github.com/johndoe/ecommerce-platform" class="project-link" target="_blank">View Project</a>
-        </div>
-        <!-- You can add more project cards below -->
-        <div class="project-card">
-          <h3>Mobile App Development</h3>
-          <p>
-            Created a cross-platform mobile app using Flutter and Firebase. The app features real-time updates and a clean, user-friendly design.
-          </p>
-          <div class="tech-stack">
-            <span>Flutter</span>
-            <span>Firebase</span>
-          </div>
-          <a href="https://github.com/johndoe/mobile-app" class="project-link" target="_blank">View Project</a>
-        </div>
       </div>
-    </div>
   </section>
+
+  <!-- Video Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+          <button class="close-btn">&times;</button>
+          <div class="video-container">
+              <iframe id="ytVideo" width="560" height="315" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+      </div>
+  </div>
+
   
     <!-- Footer -->
     <footer>
@@ -68,5 +212,30 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+
+      document.querySelector('.close-btn').addEventListener('click', () => {
+          document.getElementById('modalOverlay').style.display = 'none';
+          const iframe = document.getElementById('ytVideo');
+          iframe.src = '';
+      });
+
+      document.getElementById('modalOverlay').addEventListener('click', (e) => {
+          if (e.target === document.getElementById('modalOverlay')) {
+              document.getElementById('modalOverlay').style.display = 'none';
+              const iframe = document.getElementById('ytVideo');
+              iframe.src = '';
+          }
+      });
+
+      function downloadDesignDoc() {
+            const link = document.createElement("a");
+            link.href = "assets/designdoc.pdf";  // Ensure this path is correct
+            link.download = "assets/designdoc.pdf"; // File will be named properly
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+  </script>
 </body>
 </html>
